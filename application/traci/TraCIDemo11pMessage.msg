@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013 Christoph Sommer <sommer@ccs-labs.org>
+// Copyright (C) 2011 David Eckhoff <eckhoff@cs.fau.de>
 //
 // Documentation for these modules is at http://veins.car2x.org/
 //
@@ -20,5 +20,20 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-package org.car2x.veins.modules;
+cplusplus {{
+#include "veins/base/utils/Coord.h"
+#include "veins/modules/messages/BaseFrame1609_4_m.h"
+#include "veins/base/utils/SimpleAddress.h"
+}}
 
+namespace veins;
+
+class BaseFrame1609_4;
+class noncobject Coord;
+class LAddress::L2Type extends void;
+
+packet TraCIDemo11pMessage extends BaseFrame1609_4 {
+    string demoData;
+    LAddress::L2Type senderAddress = -1;
+    int serial = 0;
+}

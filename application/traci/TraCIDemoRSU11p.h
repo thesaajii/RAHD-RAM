@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013 Christoph Sommer <sommer@ccs-labs.org>
+// Copyright (C) 2016 David Eckhoff <david.eckhoff@fau.de>
 //
 // Documentation for these modules is at http://veins.car2x.org/
 //
@@ -20,5 +20,19 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-package org.car2x.veins.modules;
+#pragma once
 
+#include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
+
+namespace veins {
+
+/**
+ * Small RSU Demo using 11p
+ */
+class VEINS_API TraCIDemoRSU11p : public DemoBaseApplLayer {
+protected:
+    void onWSM(BaseFrame1609_4* wsm) override;
+    void onWSA(DemoServiceAdvertisment* wsa) override;
+};
+
+} // namespace veins

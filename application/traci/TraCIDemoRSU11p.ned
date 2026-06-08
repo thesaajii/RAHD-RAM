@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013 Christoph Sommer <sommer@ccs-labs.org>
+// Copyright (C) 2006-2011 Christoph Sommer <christoph.sommer@uibk.ac.at>
 //
 // Documentation for these modules is at http://veins.car2x.org/
 //
@@ -20,5 +20,11 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-package org.car2x.veins.modules;
+package org.car2x.veins.modules.application.traci;
+import org.car2x.veins.modules.application.ieee80211p.DemoBaseApplLayer;
 
+simple TraCIDemoRSU11p extends DemoBaseApplLayer
+{
+    @class(veins::TraCIDemoRSU11p);
+    @display("i=block/app2");
+}

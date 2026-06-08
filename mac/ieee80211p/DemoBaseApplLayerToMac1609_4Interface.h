@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013 Christoph Sommer <sommer@ccs-labs.org>
+// Copyright (C) 2011 David Eckhoff <eckhoff@cs.fau.de>
 //
 // Documentation for these modules is at http://veins.car2x.org/
 //
@@ -20,5 +20,37 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-package org.car2x.veins.modules;
+#pragma once
 
+#include "veins/base/utils/NetwToMacControlInfo.h"
+#include "veins/modules/utility/Consts80211p.h"
+
+namespace veins {
+
+/**
+ * @brief
+ * Interface between DemoBaseApplLayer Layer and Mac1609_4
+ *
+ * @author David Eckhoff
+ *
+ * @ingroup macLayer
+ */
+class VEINS_API DemoBaseApplLayerToMac1609_4Interface {
+public:
+    virtual bool isChannelSwitchingActive() = 0;
+
+    virtual simtime_t getSwitchingInterval() = 0;
+
+    virtual bool isCurrentChannelCCH() = 0;
+
+    virtual void changeServiceChannel(Channel channelNumber) = 0;
+
+    virtual ~DemoBaseApplLayerToMac1609_4Interface(){};
+
+    /**
+     * @brief Returns the MAC address of this MAC module.
+     */
+    virtual const LAddress::L2Type& getMACAddress() = 0;
+};
+
+} // namespace veins
